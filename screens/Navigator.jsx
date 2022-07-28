@@ -4,30 +4,35 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeComponent from "./HomeComponent";
+import Home from "./Home";
+import OneOnOne from "./OneOnOne";
+import LearnActivity from "./LearnActivity";
+import Tutor from "./Tutor";
+import DetailComponent from "./DetailComponent";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export default function Navigator() {
+const HomeNav = () => {
   return (
-    <Tab.Navigator initialRouteName={"home3"}>
+    <Tab.Navigator initialRouteName={"콘텐츠"}>
       <Tab.Screen
         name='home'
-        component={HomeComponent}
+        component={Home}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='home1'
-        component={HomeComponent}
+        name='1:1 수업'
+        component={OneOnOne}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='home2'
-        component={HomeComponent}
+        name='튜터'
+        component={Tutor}
         options={{
           headerShown: false,
         }}
@@ -40,12 +45,23 @@ export default function Navigator() {
         }}
       />
       <Tab.Screen
-        name='home4'
-        component={HomeComponent}
+        name='학습 활동'
+        component={LearnActivity}
         options={{
           headerShown: false,
         }}
       />
     </Tab.Navigator>
+  );
+};
+
+export default function Navigator() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='homeNav' component={HomeNav} />
+        <Stack.Screen name='Detail' component={DetailComponent} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
