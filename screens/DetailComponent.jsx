@@ -7,14 +7,13 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import { useEffect, useState } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
 import { AntDesign } from "@expo/vector-icons";
 
 import { dataState } from "../recoil";
 
 const DetailComponent = ({ route, navigation }) => {
-  const [isLiked, setIsLiked] = useState(false);
   const { title } = route.params;
   const screenWidth = Dimensions.get("window").width;
   const [apiData, setapiData] = useRecoilState(dataState);
@@ -32,9 +31,7 @@ const DetailComponent = ({ route, navigation }) => {
           flexDirection: "row",
           marginVertical: 10,
         }}
-        onPress={() => {
-          // console.log(item);
-        }}
+        // onPress={() => {}}
       >
         <Image
           source={{
