@@ -89,14 +89,11 @@ export default CarouselComponent;
 
 const styles = StyleSheet.create({
   viewPager: {
-    // flex: 1,
     backgroundColor: "black",
-
-    height: 380,
+    height: 400,
   },
   page: {
-    // justifyContent: "center",
-    marginTop: 10,
+    marginTop: 15,
     width: 280,
     fontSize: 12,
     alignItems: "center",

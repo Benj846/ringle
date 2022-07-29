@@ -4,7 +4,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import Component from "./Component";
 const TopTab = createMaterialTopTabNavigator();
 
-const HomeComponent = () => {
+const BottomNav = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TopTab.Navigator
@@ -48,4 +48,4 @@ const HomeComponent = () => {
     </SafeAreaView>
   );
 };
-export default HomeComponent;
+export default BottomNav;

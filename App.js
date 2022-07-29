@@ -1,10 +1,13 @@
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { RecoilRoot } from "recoil";
 
 import Navigator from "./screens/Navigator";
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <Navigator />
-    </SafeAreaProvider>
+    <RecoilRoot>
+      <SafeAreaProvider>
+        <Navigator />
+      </SafeAreaProvider>
+    </RecoilRoot>
   );
 }

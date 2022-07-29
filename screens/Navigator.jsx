@@ -2,8 +2,9 @@ import { View, Text, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
 
-import HomeComponent from "./HomeComponent";
+import BottomNav from "./BottomNav";
 import Home from "./Home";
 import OneOnOne from "./OneOnOne";
 import LearnActivity from "./LearnActivity";
@@ -39,7 +40,7 @@ const HomeNav = () => {
       />
       <Tab.Screen
         name='콘텐츠'
-        component={HomeComponent}
+        component={BottomNav}
         options={{
           headerShown: false,
         }}
@@ -59,8 +60,22 @@ export default function Navigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='homeNav' component={HomeNav} />
-        <Stack.Screen name='Detail' component={DetailComponent} />
+        <Stack.Screen
+          name='homeNav'
+          component={HomeNav}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name='링글러 Top Pick'
+          component={DetailComponent}
+          options={{
+            // headerShown: false,
+            headerLeft: () => <Ionicons name='md-chevron-back-outline' size={24} color='black' />,
+            headerRight: () => <AntDesign name='search1' size={24} color='black' />,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
