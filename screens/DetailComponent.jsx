@@ -33,7 +33,7 @@ const DetailComponent = ({ route, navigation }) => {
           marginVertical: 10,
         }}
         onPress={() => {
-          console.log(item);
+          // console.log(item);
         }}
       >
         <Image
@@ -43,7 +43,6 @@ const DetailComponent = ({ route, navigation }) => {
           style={{
             width: 170,
             height: 149,
-            // borderRadius: 20,
             borderTopLeftRadius: 10,
             borderBottomLeftRadius: 10,
           }}
