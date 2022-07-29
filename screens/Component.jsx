@@ -30,7 +30,7 @@ const Component = ({ navigation }) => {
           <TouchableWithoutFeedback
             style={{ width: "auto" }}
             onPress={() => {
-              navigation.navigate("Detail");
+              navigation.navigate("Detail", { title: "#Popular" });
             }}
           >
             <Text
